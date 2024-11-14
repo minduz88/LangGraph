@@ -1,22 +1,16 @@
-# test_agent.py
 from my_agent.agent import graph
 
 def test_agent():
-    # 테스트 구성
-    config = {"model_name": "anthropic"}  # 또는 "openai"
-    
-    # 테스트 입력
+    # Test input
     input_message = {
-        "messages": [{
-            "role": "user",
-            "content": "What is 2+2?"
-        }]
+        "question": "What player at the Bears expected to draft first in the 2024 NFL draft?"
     }
     
-    # 실행
+    # Execute
     try:
-        response = graph.invoke(input_message, config=config)
-        print("Response:", response)
+        response = graph.invoke(input_message)
+        print("\nQuestion:", input_message["question"])
+        print("\nResponse:", response)
         return True
     except Exception as e:
         print(f"Error occurred: {e}")

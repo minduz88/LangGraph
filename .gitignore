@@ -1,5 +1,5 @@
 .env
 .ipynb_checkpoints
 .langgraph-data
-venv
+.venv
 __pycache__
