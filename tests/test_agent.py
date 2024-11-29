@@ -1,15 +1,13 @@
 from my_agent.agent import graph
 
 def test_agent():
-    # Test input
     input_message = {
-        "question": "What player at the Bears expected to draft first in the 2024 NFL draft?"
+        "messages": [("user", "What are the current trends in apartment sales?")]
     }
     
-    # Execute
     try:
         response = graph.invoke(input_message)
-        print("\nQuestion:", input_message["question"])
+        print("\nQuestion:", input_message["messages"][0][1])
         print("\nResponse:", response)
         return True
     except Exception as e:
